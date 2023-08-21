@@ -51,15 +51,13 @@ def Calculation():
   if 2000<Reynolds_number<4000:
      Friction_factor = "uncertain"
   st.success(f"The Friction factor of the flow is {Friction_factor}")
-
-def plots():
-  x = Reynolds_number
-  y = Friction_factor
+  
   plt.xlabel('Reynolds number')
   plt.ylabel('Friction factor')
   plt.title('Friction factor vs Reynolds Number')
   data = image.imread('Moodychart.jpeg')
-  plt.plot(x, y, marker='o', color="red")
+  fig,ax= plt.subplots()
+  ax.plot(Reynolds_number, Friction_factor,color='black')
   plt.imshow(data)
   plt.show()
 
